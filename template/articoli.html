@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+{% load bootstrap5%}    
+<link rel="stylesheet" href="http://casaalmada.hostinggratis.it/doc/css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<script src="js/script.js"></script>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libreria</title>
+</head>
+<body>
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+    <ul>
+        <li>
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="none">
+                <div class="card-body">
+                  <h5 class="card-title">{{ art }}</h5>
+                  <p class="card-text">{{art.text}}</p>
+                  <p class="card-description">
+
+                    {% for gen in art.genere.all%}
+                        {{ gen }} 
+                    {% endfor %}
+
+                  </p>
+                  <p class="card-description">
+
+                    
+                        {{ art.autore }} 
+                    
+                    
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </li>
+    </ul>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

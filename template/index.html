@@ -20,14 +20,39 @@
 
     {# Display django.contrib.messages as Bootstrap alerts #}
     {% bootstrap_messages %}
-    <ul>
-        <li>
-            <div class="card">
-                sdfdsfd
-            </div>
-        </li>
-    </ul>
+    <div class="container">
+        
+    
+        <ul class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">     
 
+            
+                {% for articoli in art %}
+                    <li class="col">
+                        <div class="card">
+        
+                            <img src="..." class="card-img-top" alt="noneIMG">
+                            <div class="card-body">
+                                
+                                <h5 class="card-title">    
+                                    <a href="/articoli/{{articoli.id}}">{{ articoli.titolo }}</a>
+                                </h5>  
+                                
+                                <p class="card-text">{{articoli.testo}}</p>
+                            
+                            </div>
+        
+                        </div>
+                    </li>
+    
+                {% endfor %}
+    
+            
+        </ul>
+            
+        
+        
+    <div>
+    
 </body>
 </html>
 
