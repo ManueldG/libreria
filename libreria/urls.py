@@ -18,9 +18,11 @@ from django.urls import path
 
 from book.views import index
 from book.views import articoli
+from book.views import autori
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='home'),
-    path('articoli/<int:id>',articoli,name='articoli')    
+    path('articoli/<int:id>', articoli, name='articoli'), 
+    path('autori/<int:id>', autori, name='autori')    
 ]

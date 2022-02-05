@@ -10,9 +10,16 @@ def index(request):
 def articoli(request,id):
 
     art = Articolo.objects.get(id=id)
-    aut = Autore.objects.get(id = art.autore.id)
-    
+    aut = Autore.objects.get(id = art.autore.id)    
 
     context = {'id':id,'art':art,'aut':aut}
 
     return render(request,'articoli.html',context)
+
+def autori(request,id):
+    
+    aut = Autore.objects.get(id = id)    
+    
+    context = {'id':id,'aut':aut}
+
+    return render(request,'autore.html',context)

@@ -1,5 +1,6 @@
 {% extends 'theme.html' %}
-    {% block content %}
+{% block title%} {{block.super}} | {{ aut }} {% endblock%}
+{% block content  %}
 
     <div class="container">
         
@@ -7,7 +8,7 @@
         <ul class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">     
 
             
-                {% for articoli in art %}
+                
                     <li class="col">
                         <div class="card">
         
@@ -15,17 +16,20 @@
                             <div class="card-body">
                                 
                                 <h5 class="card-title">    
-                                    <a href="/articoli/{{articoli.id}}">{{ articoli.titolo }}</a>
+                                    {{ aut }}
+                                    <p>{{ aut.nazione }}</p>
                                 </h5>  
-                                
-                                <p class="card-text">{{articoli.testo}}</p>
-                                                        
+                            {% for libri in aut.articoli.all %}
+                                <p class="card-text">{{libri.titolo}}</p>
+                                <p class="card-description">{{libri.testo}}</p>
+                            {% endfor %}
+                            
                             </div>
         
                         </div>
                     </li>
     
-                {% endfor %}
+                
     
             
         </ul>
@@ -33,4 +37,5 @@
         
         
     <div>
-    {% endblock %}
+
+{% endblock %}
